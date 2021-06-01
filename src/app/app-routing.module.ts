@@ -8,7 +8,7 @@ const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: '/login'},
     { path: 'login', component: LoginComponent },
     { path: 'form', component: FormComponent },
-    { path: 'welcome', component: WelcomeComponent }
+    { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome-routing.module').then(m => m.WelcomeRoutingModule) }
 
 //   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
 //   { path: 'form', component: FormComponent},

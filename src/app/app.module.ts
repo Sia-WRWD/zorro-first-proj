@@ -17,6 +17,12 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { FormComponent } from './pages/form/form.component';
 import { LoginComponent } from './login/login.component';
 import { DemoNgZorroAntdModule } from './ng-zoro-antd.module';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { UserComponent } from './pages/user/user.component';
+import { RegisterAComponent } from './pages/register-a/register-a.component';
+import { RegisterUComponent } from './pages/register-u/register-u.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 registerLocaleData(en);
 
@@ -25,7 +31,13 @@ registerLocaleData(en);
     AppComponent,
     FormComponent,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    DashboardComponent,
+    AdminComponent,
+    UserComponent,
+    RegisterAComponent,
+    RegisterUComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +50,7 @@ registerLocaleData(en);
     NzMenuModule,
     DemoNgZorroAntdModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

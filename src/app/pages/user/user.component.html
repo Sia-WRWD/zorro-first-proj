@@ -1,0 +1,32 @@
+<div class="register-new">
+  <button nz-button nzType="primary" (click)="directRegister()">
+    Register New Admin
+  </button>
+</div>
+<br>  
+<nz-table #userTable [nzData]="fetchUserData">
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Time Created</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let UData of fetchUserData">
+        <td>{{UData.user_id}}</td>
+        <td>{{UData.user_username}}</td>
+        <td>{{UData.user_email}}</td>
+        <td>{{UData.user_firstname}} {{UData.user_lastname}}</td>
+        <td>{{UData.user_timecreated}}</td>
+        <td>
+          <a>Update Details</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>Delete</a>
+        </td>
+      </tr>
+  </tbody>
+</nz-table>

@@ -1,0 +1,30 @@
+<nz-table #adminTable [nzData]="fetchAdminData" nzShowPagination nzShowSizeChanger
+  (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+  <thead>
+    <tr>
+      <th [nzChecked]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)"></th>
+      <th>Admin ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Time Created</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let AData of adminTable.AData">  
+        <td [nzChecked]="setOfCheckedId.has(AData.admin_id)" [nzDisabled]="AData.disabled"
+          (nzCheckedChange)="onItemChecked(AData.admin_id, $event)"></td>
+        <td>{{AData.admin_id}}</td>
+        <td>{{AData.admin_username}}</td>
+        <td>{{AData.admin_email}}</td>
+        <td>{{AData.admin_firstname}} {{AData.admin_lastname}}</td>
+        <td>{{AData.admin_timecreated}}</td>
+        <td>
+          <a>Update Details</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>Delete</a>
+        </td>
+      </tr>
+  </tbody>
+</nz-table>
