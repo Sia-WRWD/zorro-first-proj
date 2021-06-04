@@ -22,11 +22,13 @@
     "@angular/platform-browser-dynamic": "~11.2.12",
     "@angular/router": "~11.2.12",
     "body-parser": "^1.19.0",
+    "chart.js": "^2.9.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "md5": "^2.3.0",
     "mysql": "^2.18.1",
     "ng-zorro-antd": "^11.4.1",
+    "ng2-charts": "^2.2.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

@@ -1,32 +1,45 @@
-<div class="register-new">
-  <button nz-button nzType="primary" (click)="directRegister()">
-    Register New Admin
-  </button>
-</div>
-<br>  
-<nz-table #userTable [nzData]="fetchUserData">
+<nz-table nzBordered [nzPageSize]="50" [nzScroll]="{ y: '405px' }" [nzData]="['']">
   <thead>
     <tr>
-      <th>User ID</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Name</th>
-      <th>Time Created</th>
+      <th nzWidth="10%">User ID</th>
+      <th nzWidth="15%">Username</th>
+      <th nzWidth="15%">Email</th>
+      <th nzWidth="15%">First Name</th>
+      <th nzWidth="15%">Last Name</th>
+      <th nzWidth="15%">Time Created</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let UData of fetchUserData">
+    <tr *ngFor="let UData of fetchUserData">
+      <!-- <ng-container *ngIf="!editCache[UData.user_ID].edit; else editTemplate"> -->
         <td>{{UData.user_id}}</td>
         <td>{{UData.user_username}}</td>
         <td>{{UData.user_email}}</td>
-        <td>{{UData.user_firstname}} {{UData.user_lastname}}</td>
+        <td>{{UData.user_firstname}}</td>
+        <td>{{UData.user_lastname}}</td>
         <td>{{UData.user_timecreated}}</td>
         <td>
-          <a>Update Details</a>
+          <a (click)="startEdit(UData.user_id)">Update</a>
           <nz-divider nzType="vertical"></nz-divider>
-          <a>Delete</a>
+          <a nz-popconfirm nzPopconfirmTitle="Delete this User?" (nzOnConfirm)="deleteUserData()">
+            Delete
+          </a>
         </td>
-      </tr>
+      <!-- </ng-container> -->
+      <!-- <ng-template #editTemplate>
+        <td>{{UData.user_id}}</td>
+        <td><input type="text" nz-input [(ngModel)]="editCache[UData.user_id].user_username" /></td>
+        <td><input type="text" nz-input [(ngModel)]="editCache[UData.user_id].user_email" /></td>
+        <td><input type="text" nz-input [(ngModel)]="editCache[UData.user_id].user_firstname" /></td>
+        <td><input type="text" nz-input [(ngModel)]="editCache[UData.user_id].user_lastname" /></td>
+        <td>{{UData.user_timecreated}}</td>
+        <td>
+          <a (click)="saveEdit(UData.user_id)" class="save">Save</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a nz-popconfirm nzPopconfirmTitle="Cancel Changes Made?" (nzOnConfirm)="cancelEdit(UData.user_id)">Cancel</a>
+        </td>
+      </ng-template> -->
+    </tr>
   </tbody>
 </nz-table>

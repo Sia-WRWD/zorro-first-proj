@@ -1,0 +1,39 @@
+nz-carousel {
+    height: 200px;
+}
+
+[nz-carousel-content] {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: linear-gradient(to top right, violet, pink, lightskyblue, pink, violet);
+    color: #fff;
+    overflow: hidden;
+  }
+
+  h3 {
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 50px;
+  }
+
+  .calendar-container {
+    margin-top: 10px;
+  }
+  
+  ::ng-deep .ant-picker-calendar-mini .ant-picker-calendar-header {
+    background: grey;
+  }
+
+  nz-card {
+    margin-top: 12px;
+    margin-right: 10px;
+  }
+
+  .card {
+    height: 65px;
+  }
+
+  .card:hover {
+    background: #BEBEBE
+  }

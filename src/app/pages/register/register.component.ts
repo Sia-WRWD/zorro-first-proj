@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
 import { RegisterService } from 'src/app/service/register.service';
 import { registerDetails } from 'src/app/shared/register';
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   //   theme: 'twotone'
   // };
 
-  constructor(private fb: FormBuilder, private _registerService: RegisterService) { }
+  constructor(private fb: FormBuilder, private _registerService: RegisterService, private router: Router) { }
 
   ngOnInit(): void {
     this.initializeRegistrationForm();
@@ -38,7 +39,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  submitForm(f :NgForm) {
+  submitForm(f: NgForm) {
     for (const i in this.registrationForm.controls) {
       this.registrationForm.controls[i].markAsDirty();
       this.registrationForm.controls[i].updateValueAndValidity();
@@ -46,20 +47,27 @@ export class RegisterComponent implements OnInit {
     console.log(this.registrationForm)
     this._registerService.register(this.registerModel)
       .subscribe(
-        data => console.log('Success', data),
-        error => console.error('Error!', error)
-      )
+        data => {
+          console.log('Success', data),
+            alert("Succesfully Registered New User!"),
+            this.router.navigate(['welcome/register-success']);
+        },
+        error => {
+          console.error('Error!', error),
+            alert("Registration for New User Failed!"),
+            this.router.navigate(['welcome/register-fail']);
+        });
   }
 
   updateConfirmValidator(): void {
     Promise.resolve().then(() => this.registrationForm.controls.checkPassword.updateValueAndValidity());
   }
 
-  confirmationValidator = (control:FormControl): { [s:string]: boolean } => {
+  confirmationValidator = (control: FormControl): { [s: string]: boolean } => {
     if (!control.value) {
-      return {required: true};
+      return { required: true };
     } else if (control.value !== this.registrationForm.controls.password.value) {
-      return {confirm: true, error: true};
+      return { confirm: true, error: true };
     }
     return {};
   };

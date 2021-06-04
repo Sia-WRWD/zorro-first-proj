@@ -1,0 +1,7 @@
+::ng-deep .ant-result-success .ant-result-icon > .anticon {
+    font-size: 150px !important;
+}
+
+.adjust {
+    margin-top: 70px;
+}

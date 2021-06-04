@@ -1,8 +1,6 @@
-<nz-table #adminTable [nzData]="fetchAdminData" nzShowPagination nzShowSizeChanger
-  (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+<nz-table nzBordered [nzPageSize]="50" [nzScroll]="{ y: '405px' }" [nzData]="['']" [nzData]="['']">
   <thead>
     <tr>
-      <th [nzChecked]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)"></th>
       <th>Admin ID</th>
       <th>Username</th>
       <th>Email</th>
@@ -12,9 +10,7 @@
     </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let AData of adminTable.AData">  
-        <td [nzChecked]="setOfCheckedId.has(AData.admin_id)" [nzDisabled]="AData.disabled"
-          (nzCheckedChange)="onItemChecked(AData.admin_id, $event)"></td>
+      <tr *ngFor="let AData of listofFetchAdminData">  
         <td>{{AData.admin_id}}</td>
         <td>{{AData.admin_username}}</td>
         <td>{{AData.admin_email}}</td>

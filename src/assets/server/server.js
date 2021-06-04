@@ -78,6 +78,9 @@ app.post('/registration', async function (req, res, next) {
                                 console.log("Successfully Registered New Admin Account!");
                             }
                         });
+                    } else {
+                        console.log("Admin with this Username already Exist!"); 
+                        res.send({ data: error })
                     }
                 });
             } catch (error) {
@@ -97,14 +100,40 @@ app.post('/registration', async function (req, res, next) {
                                 res.send({ status: 0, data: err });
                             } else {
                                 console.log("Successfully Registered New User Account!");
+                                res.send({ data: error })
                             }
                         });
+                    } else {
+                        console.log("User with this Username already Exist!"); 
+                        res.send({ data: err })
                     }
                 });
             } catch (error) {
                 res.send({ status: 0, error: error });
             }
         }
+    });
+});
+
+//Delete Users 
+app.post('/DeleteUserData', async function (req, res, next) {
+
+    console.log(req.body);
+    res.status(200).send({ message: "Delete Data Received! "});
+
+    pool.getConnection(function (err, connection) {
+        if (err) throw err
+        var userID = req.body.user_id;
+        const delUserData = `DELETE FROM user WHERE user_id = ?`;
+
+        connection.query(delUserData, [userID], (err, result, fields) => {
+            connection.release();
+            if (err) {
+                res.send({ status: 0, data: err });
+            } else {
+                console.log("Successfully Deleted User!")
+            }
+        });
     });
 });
 
