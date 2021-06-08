@@ -1,0 +1,23 @@
+.gen-report {
+    float: right;
+}
+
+.event-prev {
+    margin-top: 80px;
+}
+
+.event-prev:hover, .gen-report:hover {
+    transition: 0.3s;
+    background: black;
+    color: violet;
+    border: 2px solid violet;
+}
+
+.lower-card { 
+    margin-top: 10px;
+    text-align: center;
+}
+
+:ng-deep .inner-content[_ngcontent-enc-c116] {
+    padding: 15px;
+}

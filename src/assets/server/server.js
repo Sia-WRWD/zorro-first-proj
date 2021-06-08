@@ -79,6 +79,7 @@ app.post('/registration', async function (req, res, next) {
                             }
                         });
                     } else {
+                        connection.release();
                         console.log("Admin with this Username already Exist!"); 
                         res.send({ data: error })
                     }
@@ -100,10 +101,11 @@ app.post('/registration', async function (req, res, next) {
                                 res.send({ status: 0, data: err });
                             } else {
                                 console.log("Successfully Registered New User Account!");
-                                res.send({ data: error })
+                                res.send({ data: error })   
                             }
                         });
                     } else {
+                        connection.release();
                         console.log("User with this Username already Exist!"); 
                         res.send({ data: err })
                     }

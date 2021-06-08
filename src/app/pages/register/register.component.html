@@ -66,7 +66,8 @@
             Select User Role
         </nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please select a user role!">
-            <nz-select id="userRole" nzPlaceholder="Select a User Role to Assign" name="select-validate" formControlName="userRole" [(ngModel)]="registerModel.userRole">
+            <nz-select id="userRole" nzPlaceholder="Select a User Role to Assign" name="select-validate"
+                formControlName="userRole" [(ngModel)]="registerModel.userRole">
                 <nz-option nzValue="Admin" nzLabel="Admin"></nz-option>
                 <nz-option nzValue="User" nzLabel="User"></nz-option>
             </nz-select>

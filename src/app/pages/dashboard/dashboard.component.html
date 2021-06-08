@@ -6,14 +6,30 @@
 <div nz-row>
     <div nz-col nzSpan="16">
         <nz-card nzTitle="Task to Complete">
-            <div class="card" nz-card-grid [ngStyle]="gridStyle">Task 1</div>   
-            <div class="card" nz-card-grid [ngStyle]="gridStyle">Task 2</div>   
-            <div class="card" nz-card-grid [ngStyle]="gridStyle">Task 3</div>   
-            <div class="card" nz-card-grid [ngStyle]="gridStyle">Task 4</div>   
-            <div class="card" nz-card-grid [ngStyle]="gridStyle">Task 5</div>   
-            <div class="card" nz-card-grid [ngStyle]="gridStyle">Task 6</div>   
-            <div class="card" nz-card-grid [ngStyle]="gridStyle">Task 7</div>   
-            <div class="card" nz-card-grid [ngStyle]="gridStyle">Task 8</div>   
+            <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal1()">
+                <span>Task 1 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+            </div>
+            <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal2()">
+                <span>Task 2 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+            </div>
+            <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal3()">
+                <span>Task 3 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+            </div>
+            <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal4()">
+                <span>Task 4 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+            </div>
+            <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal5()">
+                <span>Task 5 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+            </div>
+            <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal6()">
+                <span>Task 6 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+            </div>
+            <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal7()">
+                <span>Task 7 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+            </div>
+            <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal8()">
+                <span>Task 8 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+            </div>
         </nz-card>
     </div>
     <div nz-col nzSpan="8">
@@ -23,3 +39,60 @@
         </div>
     </div>
 </div>
+
+
+<!--Modal-1-->
+<nz-modal [(nzVisible)]="isVisible1" nzTitle="Meeting with AYAYA" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <img src="../../../assets/images/ayaya.gif">
+    </ng-container>
+</nz-modal>
+
+<!--Modal-2-->
+<nz-modal [(nzVisible)]="isVisible2" nzTitle="Meeting with Joe" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <img src="../../../assets/images/ayaya.gif">
+    </ng-container>
+</nz-modal>
+
+<!--Modal-3-->
+<nz-modal [(nzVisible)]="isVisible3" nzTitle="Meeting with xQcOW" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <img src="../../../assets/images/ayaya.gif">
+    </ng-container>
+</nz-modal>
+
+<!--Modal-4-->
+<nz-modal [(nzVisible)]="isVisible4" nzTitle="Meeting with lysium" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <img src="../../../assets/images/ayaya.gif">
+    </ng-container>
+</nz-modal>
+
+<!--Modal-5-->
+<nz-modal [(nzVisible)]="isVisible5" nzTitle="Meeting with Burn" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <img src="../../../assets/images/ayaya.gif">
+    </ng-container>
+</nz-modal>
+
+<!--Modal-6-->
+<nz-modal [(nzVisible)]="isVisible6" nzTitle="Meeting with Mr.Lang" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <img src="../../../assets/images/ayaya.gif">
+    </ng-container>
+</nz-modal>
+
+<!--Modal-7-->
+<nz-modal [(nzVisible)]="isVisible7" nzTitle="Meeting with Sasha" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <img src="../../../assets/images/ayaya.gif">
+    </ng-container>
+</nz-modal>
+
+<!--Modal-8-->
+<nz-modal [(nzVisible)]="isVisible8" nzTitle="Meeting with Charles" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <img src="../../../assets/images/ayaya.gif">
+    </ng-container>
+</nz-modal>

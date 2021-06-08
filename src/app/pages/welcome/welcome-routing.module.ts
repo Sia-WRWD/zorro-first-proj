@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterFailComponent } from 'src/app/message/register-fail/register-fail.component';
 import { RegisterSuccessComponent } from 'src/app/message/register-success/register-success.component';
+import { ActivityLogsComponent } from '../activity-logs/activity-logs.component';
 import { AdminComponent } from '../admin/admin.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { RegisterComponent } from '../register/register.component';
 import { UserComponent } from '../user/user.component';
+import { WebAnalyticsComponent } from '../web-analytics/web-analytics.component';
 import { WelcomeComponent } from './welcome.component';
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
       { path: 'user', component: UserComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'register-success', component: RegisterSuccessComponent },
-      { path: 'register-fail', component: RegisterFailComponent }
+      { path: 'register-fail', component: RegisterFailComponent },
+      { path: 'web-analytics', component: WebAnalyticsComponent },
+      { path: 'activity-logs', component: ActivityLogsComponent }
     ] 
   },
 ];

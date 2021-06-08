@@ -1,0 +1,66 @@
+<div nz-row>
+    <nz-card class="upper-card-1" style="width: 400px;" nz-col [nzSpan]="8">
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="12">
+                <nz-statistic [nzValue]="(1949101 | number)!" [nzTitle]="'Total Users'"></nz-statistic>
+            </nz-col>
+            <nz-col [nzSpan]="12">
+                <nz-statistic [nzValue]="(9999999 | number)!" [nzTitle]="'Total Transaction'"></nz-statistic>
+            </nz-col>
+        </nz-row>
+        <br>
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="12">
+                <nz-statistic [nzValue]="(1949101 | number)!" [nzTitle]="'Active Users'"></nz-statistic>
+            </nz-col>
+            <nz-col [nzSpan]="12">
+                <nz-statistic [nzValue]="(20212021.111 | number: '1.0-2')!" [nzTitle]="'Total Sales (MYR)'">
+                </nz-statistic>
+            </nz-col>
+        </nz-row>
+        <br>
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="12">
+                <nz-statistic [nzValue]="(1949101 | number)!" [nzTitle]="'InActive Users'"></nz-statistic>
+            </nz-col>
+            <nz-col [nzSpan]="12">
+                <nz-statistic [nzValue]="(20212021.111 | number: '1.0-2')!" [nzTitle]="'Total Revenue (MYR)'">
+                </nz-statistic>
+            </nz-col>
+        </nz-row>
+        <br>
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="24">
+                <button nz-button nzType="primary" [nzSize]="size" class="gen-report">Report <i nz-icon
+                        nzType="download" nzTheme="outline"></i></button>
+            </nz-col>
+        </nz-row>
+    </nz-card>
+
+    <div nz-col [nzSpan]="1"></div>
+
+    <nz-card class="upper-card-2" style="width: 600px; text-align: center;" nz-col [nzSpan]="15">
+        <nz-row [nzGutter]="16">
+            <nz-col [nzSpan]="7">
+                <nz-countdown [nzValue]="deadline" [nzTitle]="'Countdown'"></nz-countdown>
+            </nz-col>
+            <nz-col [nzSpan]="9">
+                <nz-countdown [nzValue]="deadline" [nzTitle]="'Milli-Seconds'" [nzFormat]="'HH:mm:ss:SSS'">
+                </nz-countdown>
+            </nz-col>
+            <nz-col [nzSpan]="8">
+                <nz-countdown [nzValue]="deadline" [nzTitle]="'Day Level'" [nzFormat]="'D - H - m - s '"></nz-countdown>
+            </nz-col>
+            <nz-col [nzSpan]="24">
+                <button class="event-prev" nz-button nzType="primary" [nzSize]="size" nzShape="round"
+                    (click)="showEvent()">
+                    What is the Event? <i nz-icon nzType="info-circle" nzTheme="outline"></i>
+                </button>
+            </nz-col>
+        </nz-row>
+    </nz-card>
+    
+    <nz-card class="lower-card" nz-col [nzSpan]="24">
+        <nz-progress [nzPercent]="99.9" [nzStrokeColor]="{ '0%': 'black', '100%': 'violet' }" nzStatus="active"></nz-progress>
+    </nz-card>
+</div>

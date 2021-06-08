@@ -1,13 +1,13 @@
-<nz-table nzBordered [nzPageSize]="50" [nzScroll]="{ y: '405px' }" [nzData]="['']">
+<nz-table nzBordered [nzPageSize]="50" [nzScroll]="{ y: '355px' }" [nzData]="['']">
   <thead>
     <tr>
-      <th nzWidth="10%">User ID</th>
-      <th nzWidth="15%">Username</th>
-      <th nzWidth="15%">Email</th>
-      <th nzWidth="15%">First Name</th>
-      <th nzWidth="15%">Last Name</th>
-      <th nzWidth="15%">Time Created</th>
-      <th>Actions</th>
+      <th nzWidth="10%"><b>User ID</b></th>
+      <th nzWidth="15%"><b>Username</b></th>
+      <th nzWidth="15%"><b>Email</b></th>
+      <th nzWidth="15%"><b>First Name</b></th>
+      <th nzWidth="15%"><b>Last Name</b></th>
+      <th nzWidth="15%"><b>Time Created</b></th>
+      <th><b>Actions</b></th>
     </tr>
   </thead>
   <tbody>
@@ -19,9 +19,8 @@
         <td>{{UData.user_firstname}}</td>
         <td>{{UData.user_lastname}}</td>
         <td>{{UData.user_timecreated}}</td>
-        <td>
-          <a (click)="startEdit(UData.user_id)">Update</a>
-          <nz-divider nzType="vertical"></nz-divider>
+        <td class="action-btn">
+          <a (click)="startEdit(UData.user_id)">Update</a><br>
           <a nz-popconfirm nzPopconfirmTitle="Delete this User?" (nzOnConfirm)="deleteUserData()">
             Delete
           </a>

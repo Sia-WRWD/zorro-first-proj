@@ -1,0 +1,17 @@
+nz-card {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.print-timeline {
+    margin-top: 15px;
+    margin-left: 87.5%;
+    float: right;
+    font-style: italic;
+}
+
+.print-timeline:hover {
+    background: black;
+    color: violet;
+    border: 2px solid violet;
+}

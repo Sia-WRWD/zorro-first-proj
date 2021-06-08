@@ -32,8 +32,10 @@ nz-carousel {
 
   .card {
     height: 65px;
+    font-weight: bold;
   }
 
   .card:hover {
-    background: #BEBEBE
+    background: black;
+    color: violet;
   }

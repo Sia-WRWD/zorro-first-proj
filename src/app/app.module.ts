@@ -23,6 +23,8 @@ import { UserComponent } from './pages/user/user.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RegisterSuccessComponent } from './message/register-success/register-success.component';
 import { RegisterFailComponent } from './message/register-fail/register-fail.component';
+import { WebAnalyticsComponent } from './pages/web-analytics/web-analytics.component';
+import { ActivityLogsComponent } from './pages/activity-logs/activity-logs.component';
 
 registerLocaleData(en);
 
@@ -37,7 +39,9 @@ registerLocaleData(en);
     UserComponent,
     RegisterComponent,
     RegisterSuccessComponent,
-    RegisterFailComponent
+    RegisterFailComponent,
+    WebAnalyticsComponent,
+    ActivityLogsComponent
   ],
   imports: [
     BrowserModule,

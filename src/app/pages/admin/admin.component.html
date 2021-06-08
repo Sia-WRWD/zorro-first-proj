@@ -1,12 +1,13 @@
-<nz-table nzBordered [nzPageSize]="50" [nzScroll]="{ y: '405px' }" [nzData]="['']" [nzData]="['']">
+<nz-table nzBordered [nzPageSize]="50" [nzScroll]="{ y: '355px' }" [nzData]="['']" [nzData]="['']">
   <thead>
     <tr>
-      <th>Admin ID</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Name</th>
-      <th>Time Created</th>
-      <th>Actions</th>
+      <th nzWidth="10%"><b>User ID</b></th>
+      <th nzWidth="15%"><b>Username</b></th>
+      <th nzWidth="15%"><b>Email</b></th>
+      <th nzWidth="15%"><b>First Name</b></th>
+      <th nzWidth="15%"><b>Last Name</b></th>
+      <th nzWidth="15%"><b>Time Created</b></th>
+      <th><b>Actions</b></th>
     </tr>
   </thead>
   <tbody>
@@ -14,11 +15,11 @@
         <td>{{AData.admin_id}}</td>
         <td>{{AData.admin_username}}</td>
         <td>{{AData.admin_email}}</td>
-        <td>{{AData.admin_firstname}} {{AData.admin_lastname}}</td>
+        <td>{{AData.admin_firstname}} </td>
+        <td>{{AData.admin_lastname}}</td>
         <td>{{AData.admin_timecreated}}</td>
-        <td>
-          <a>Update Details</a>
-          <nz-divider nzType="vertical"></nz-divider>
+        <td class="action-btn">
+          <a>Update</a><br>
           <a>Delete</a>
         </td>
       </tr>
