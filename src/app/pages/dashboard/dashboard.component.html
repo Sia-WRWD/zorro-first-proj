@@ -3,9 +3,10 @@
         <h3>{{ index }}</h3>
     </div>
 </nz-carousel>
-<div nz-row>
+
+<div nz-row class="task-cards">
     <div nz-col nzSpan="16">
-        <nz-card nzTitle="Task to Complete">
+        <nz-card nzTitle="Task to Complete" class="task-title">
             <div class="card" nz-card-grid [ngStyle]="gridStyle" (click)="showModal1()">
                 <span>Task 1 <i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
             </div>
@@ -32,8 +33,9 @@
             </div>
         </nz-card>
     </div>
+
     <div nz-col nzSpan="8">
-        <div class="calendar-container" [ngStyle]="{ width: 'auto', border: '2px solid black', borderRadius: '4px' }">
+        <div class="calendar-container" [ngStyle]="{ height:'325px', width: 'auto', border: '2px solid black', borderRadius: '4px' }">
             <nz-calendar [nzFullscreen]="false" (nzSelectChange)="onValueChange($event)"
                 (nzPanelChange)="onPanelChange($event)"></nz-calendar>
         </div>

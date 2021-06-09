@@ -1,5 +1,6 @@
 nz-carousel {
-    height: 200px;
+    height: 140px;
+    width: auto;
 }
 
 [nz-carousel-content] {
@@ -30,12 +31,25 @@ nz-carousel {
     margin-right: 10px;
   }
 
+  .task-cards {
+    margin-top: 2px;
+  }
+
   .card {
     height: 65px;
     font-weight: bold;
   }
 
   .card:hover {
+    background: #fff;
+    color: black;
+  }
+
+  .task-title {
     background: black;
     color: violet;
+  }
+
+  ::ng-deep .ant-card-head-title {
+    color: #fff;
   }

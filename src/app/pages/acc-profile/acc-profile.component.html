@@ -1,0 +1,195 @@
+<nz-tabset>
+    <nz-tab nzTitle="Profile">
+        <nz-table>
+            <td>
+                <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate1">
+                    <nz-card-meta nzTitle="Si@" nzDescription="Software Engineer"></nz-card-meta>
+                </nz-card>
+                <ng-template #coverTemplate1>
+                    <img nz-image alt="example"
+                        nzSrc="http://www.pngmart.com/files/13/Izuku-Midoriya-My-Hero-Academia-PNG-Free-Download.png"
+                        (click)="open1()" />
+                </ng-template>
+            </td>
+            <td>
+                <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate2">
+                    <nz-card-meta nzTitle="Prem" nzDescription="Titan Killer"></nz-card-meta>
+                </nz-card>
+                <ng-template #coverTemplate2>
+                    <img nz-image alt="example"
+                        nzSrc="https://i.pinimg.com/originals/8d/c3/16/8dc316521ab7cb26c77eca8db638a347.jpg"
+                        (click)="open2()" />
+                </ng-template>
+            </td>
+            <td>
+                <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate3">
+                    <nz-card-meta nzTitle="Rias" nzDescription="Demon Lord"></nz-card-meta>
+                </nz-card>
+                <ng-template #coverTemplate3>
+                    <img nz-image alt="example"
+                        nzSrc="https://www.pngkey.com/png/full/162-1627631_which-of-these-busty-anime-gingers-would-win.png"
+                        (click)="open3()" />
+                </ng-template>
+            </td>
+            <td>
+                <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate4">
+                    <nz-card-meta nzTitle="Miku" nzDescription="Anime Character"></nz-card-meta>
+                </nz-card>
+                <ng-template #coverTemplate4>
+                    <img nz-image alt="example"
+                        nzSrc="https://i.pinimg.com/736x/c1/90/46/c1904654bfdc67164945d4ed16a2a215.jpg"
+                        (click)="open4()" />
+                </ng-template>
+            </td>
+        </nz-table>
+    </nz-tab>
+    <nz-tab nzTitle="Personal Details">
+        <nz-card class="tab-2">
+            <img nz-image alt="random" nzSrc="https://i.kym-cdn.com/photos/images/newsfeed/001/519/134/048.gif">
+        </nz-card>
+    </nz-tab>
+</nz-tabset>
+
+<!--Drawer 1-->
+<nz-drawer [nzVisible]="visible1" [nzWidth]="640" [nzClosable]="false" (nzOnClose)="close()">
+    <ng-container *nzDrawerContent>
+        <p class="title" style=" margin-bottom: 24px;">User Profile</p>
+        <nz-descriptions [nzColumn]="2" nzTitle="Personal">
+            <nz-descriptions-item nzTitle="Full Name" [nzSpan]="1">Si@</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Account" [nzSpan]="1">sia@gmail.com</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="City" [nzSpan]="1">Tokyo</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Country" [nzSpan]="1">Japan</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Birthday" [nzSpan]="1">24 January 2020</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Website" [nzSpan]="1">-</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Message" [nzSpan]="2">Life is Short, Just Do It!</nz-descriptions-item>
+        </nz-descriptions>
+        <nz-divider></nz-divider>
+        <nz-descriptions [nzColumn]="2" nzTitle="Company">
+            <nz-descriptions-item nzTitle="Position" [nzSpan]="1">Junior Software Programmer</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Responsibilities" [nzSpan]="1">Coding & Debugging</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Department" [nzSpan]="1">QAS R&D</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Supervisor" [nzSpan]="1">Hugo</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Skills" [nzSpan]="2">
+                C / C + +, data structures, software engineering, operating systems, computer networks, databases,
+                compiler theory, computer
+                architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.
+            </nz-descriptions-item>
+        </nz-descriptions>
+        <nz-divider></nz-divider>
+        <nz-descriptions [nzColumn]="2" nzTitle="Contacts">
+            <nz-descriptions-item nzTitle="Email" [nzSpan]="1">sia@gmail.com</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Phone Number" [nzSpan]="1">+60 1111 1111</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Github" [nzSpan]="2">
+                <a href="https://github.com/sia-wrwd" target="_blank">https://github.com/sia-wrwd</a>
+            </nz-descriptions-item>
+        </nz-descriptions>
+    </ng-container>
+</nz-drawer>
+
+<!--Drawer 2-->
+<nz-drawer [nzVisible]="visible2" [nzWidth]="640" [nzClosable]="false" (nzOnClose)="close()">
+    <ng-container *nzDrawerContent>
+        <p class="title" style=" margin-bottom: 24px;">User Profile</p>
+        <nz-descriptions [nzColumn]="2" nzTitle="Personal">
+            <nz-descriptions-item nzTitle="Full Name" [nzSpan]="1">Prem</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Account" [nzSpan]="1">prem@gmail.com</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="City" [nzSpan]="1">Ragako</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Country" [nzSpan]="1">Germany</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Birthday" [nzSpan]="1">24 January 1893</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Website" [nzSpan]="1">-</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Message" [nzSpan]="2">If you want to try and stop me... then try to stop me
+                from ever taking another breath. You are all free.</nz-descriptions-item>
+        </nz-descriptions>
+        <nz-divider></nz-divider>
+        <nz-descriptions [nzColumn]="2" nzTitle="Company">
+            <nz-descriptions-item nzTitle="Position" [nzSpan]="1">Titan Killer Specialist</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Responsibilities" [nzSpan]="1">Killing Titans</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Department" [nzSpan]="1">Titan Killer</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Supervisor" [nzSpan]="1">God</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Skills" [nzSpan]="2">
+                Killing Titans
+            </nz-descriptions-item>
+        </nz-descriptions>
+        <nz-divider></nz-divider>
+        <nz-descriptions [nzColumn]="2" nzTitle="Contacts">
+            <nz-descriptions-item nzTitle="Email" [nzSpan]="1">prem@gmail.com</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Phone Number" [nzSpan]="1">+60 1111 1111</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Fandom" [nzSpan]="2">
+                <a href="https://attackontitan.fandom.com/wiki/Eren_Yeager"
+                    target="_blank">https://attackontitan.fandom.com/wiki/Eren_Yeager</a>
+            </nz-descriptions-item>
+        </nz-descriptions>
+    </ng-container>
+</nz-drawer>
+
+<!--Drawer 3-->
+<nz-drawer [nzVisible]="visible3" [nzWidth]="640" [nzClosable]="false" (nzOnClose)="close()">
+    <ng-container *nzDrawerContent>
+        <p class="title" style=" margin-bottom: 24px;">User Profile</p>
+        <nz-descriptions [nzColumn]="2" nzTitle="Personal">
+            <nz-descriptions-item nzTitle="Full Name" [nzSpan]="1">Rias</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Account" [nzSpan]="1">rias@gmail.com</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="City" [nzSpan]="1">Tokyo</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Country" [nzSpan]="1">Japan</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Birthday" [nzSpan]="1">9 April 2002</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Website" [nzSpan]="1">-</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Message" [nzSpan]="2">We haven't lost yet! You lose when you've given up!
+            </nz-descriptions-item>
+        </nz-descriptions>
+        <nz-divider></nz-divider>
+        <nz-descriptions [nzColumn]="2" nzTitle="Company">
+            <nz-descriptions-item nzTitle="Position" [nzSpan]="1">Demon Lord</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Responsibilities" [nzSpan]="1">Slaving Human</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Department" [nzSpan]="1">-</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Supervisor" [nzSpan]="1">-</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Skills" [nzSpan]="2">
+                Being A Demon Lord.
+            </nz-descriptions-item>
+        </nz-descriptions>
+        <nz-divider></nz-divider>
+        <nz-descriptions [nzColumn]="2" nzTitle="Contacts">
+            <nz-descriptions-item nzTitle="Email" [nzSpan]="1">rias@gmail.com</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Phone Number" [nzSpan]="1">+60 1111 1111</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Fandom" [nzSpan]="2">
+                <a href="https://highschooldxd.fandom.com/wiki/Rias_Gremory"
+                    target="_blank">https://highschooldxd.fandom.com/wiki/Rias_Gremory</a>
+            </nz-descriptions-item>
+        </nz-descriptions>
+    </ng-container>
+</nz-drawer>
+
+<!--Drawer 4-->
+<nz-drawer [nzVisible]="visible4" [nzWidth]="640" [nzClosable]="false" (nzOnClose)="close()">
+    <ng-container *nzDrawerContent>
+        <p class="title" style=" margin-bottom: 24px;">User Profile</p>
+        <nz-descriptions [nzColumn]="2" nzTitle="Personal">
+            <nz-descriptions-item nzTitle="Full Name" [nzSpan]="1">Miku</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Account" [nzSpan]="1">miku@gmail.com</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="City" [nzSpan]="1">Tokyo</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Country" [nzSpan]="1">Japan</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Birthday" [nzSpan]="1">5 May 2002</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Website" [nzSpan]="1">-</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Message" [nzSpan]="2">Don't give up after failing just twice... We'll be able
+                to do it next time!</nz-descriptions-item>
+        </nz-descriptions>
+        <nz-divider></nz-divider>
+        <nz-descriptions [nzColumn]="2" nzTitle="Company">
+            <nz-descriptions-item nzTitle="Position" [nzSpan]="1">History Teacher</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Responsibilities" [nzSpan]="1">Teaching</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Department" [nzSpan]="1">Faculty of Historical Studies</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Supervisor" [nzSpan]="1">-</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Skills" [nzSpan]="2">
+                Teaching, Plentiful Knowledge on History.
+            </nz-descriptions-item>
+        </nz-descriptions>
+        <nz-divider></nz-divider>
+        <nz-descriptions [nzColumn]="2" nzTitle="Contacts">
+            <nz-descriptions-item nzTitle="Email" [nzSpan]="1">miku@gmail.com</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Phone Number" [nzSpan]="1">+60 1111 1111</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Fandom" [nzSpan]="2">
+                <a href="https://5hanayome.fandom.com/wiki/Miku_Nakano"
+                    target="_blank">https://5hanayome.fandom.com/wiki/Miku_Nakano</a>
+            </nz-descriptions-item>
+        </nz-descriptions>
+    </ng-container>
+</nz-drawer>

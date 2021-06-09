@@ -25,6 +25,7 @@ import { RegisterSuccessComponent } from './message/register-success/register-su
 import { RegisterFailComponent } from './message/register-fail/register-fail.component';
 import { WebAnalyticsComponent } from './pages/web-analytics/web-analytics.component';
 import { ActivityLogsComponent } from './pages/activity-logs/activity-logs.component';
+import { AccProfileComponent } from './pages/acc-profile/acc-profile.component';
 
 registerLocaleData(en);
 
@@ -41,7 +42,8 @@ registerLocaleData(en);
     RegisterSuccessComponent,
     RegisterFailComponent,
     WebAnalyticsComponent,
-    ActivityLogsComponent
+    ActivityLogsComponent,
+    AccProfileComponent
   ],
   imports: [
     BrowserModule,
