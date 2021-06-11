@@ -12,3 +12,7 @@
   .action-btn a:hover {
     color: violet;
   }
+
+  ::ng-deep .ant-table-thead > tr > th {
+    text-align: center;
+  }

@@ -57,9 +57,9 @@ app.get('/fetchUD', function (req, res) {
 
 //Register Users
 app.post('/registration', async function (req, res, next) {
-    console.log(req.body);
     res.status(200).send({ message: "Registration Data Received!" });
     let { email, password, username, firstName, lastName, userRole } = req.body;
+    console.log(req.body);
 
     pool.getConnection(function (err, connection) {
         if (userRole == "Admin") {
@@ -138,6 +138,62 @@ app.post('/DeleteUserData', async function (req, res, next) {
         });
     });
 });
+
+//Forgot Password
+app.post('/updateForgotPwd', async function(req, res, next) {
+    res.status(200).send({ message: "Forgot Password Data Received!" });
+    let { email, username, password } = req.body;
+    console.log(req.body);
+
+    pool.getConnection(function (err, connection) {
+        if (err) throw err
+        const CheckUsernameExist = `SELECT user_username FROM user WHERE user_username = ?`
+        const HashedPwd = md5(password.toString());
+
+        connection.query(CheckUsernameExist, [username], (err, result, fields) => {
+            if (result.length == 1) {
+                const UpdateForgotPwd = `UPDATE user SET user_password = ? WHERE user_username = ? AND user_email = ?`
+                connection.query(UpdateForgotPwd, [HashedPwd, username, email], function (err, result, fields) {
+                    connection.release();
+                    if (err) {
+                        res.send({ status: 0, data: err });
+                    } else {
+                        console.log("Successfully Updated Password");
+                    }
+                });
+            } else if (!result.length) {
+                 console.log("No Such Username Exist, Please Try Again!");
+            }
+        });
+    });
+});
+
+//Verify Login Info 
+app.post('/verifyLogin', async function(req, res, next) {
+    res.status(200).send({ message: "Login Data Received!" });
+    let { username, password } = req.body;
+    console.log(req.body);
+
+    pool.getConnection(function (err, connection) {
+        if (err) throw err;
+        HashedPassword = md5(password.toString());
+        const VerifyLoginInfo = `SELECT user_username AND user_password FROM user WHERE user_username = ? AND user_password = ?`;
+        
+        connection.query(VerifyLoginInfo, [username, HashedPassword], (err, result, fields) => {
+            if (result.length == 1) {
+                connection.release();
+                if (err) {
+                    res.send({ status: 0, data: err });
+                } else {
+                    console.log("Information Provided is True!");
+                }
+            } else if (!result.length) {
+                console.log('Information Provided is False, Please Try Again')
+            }
+        });
+    });
+});
+
 
 //Server Access Point.
 app.listen(PORT, function () {

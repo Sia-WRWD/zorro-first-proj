@@ -34,6 +34,4 @@ export class AdminComponent implements OnInit {
       console.log('Error Encountered: ', error);
     });
   }
-
-
 }

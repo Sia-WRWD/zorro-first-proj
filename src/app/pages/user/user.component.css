@@ -9,6 +9,6 @@
     color: violet;
 }
 
-nz-table thead tr th {
-    font-weight: bold;
-}
+::ng-deep .ant-table-thead > tr > th {
+    text-align: center;
+  }

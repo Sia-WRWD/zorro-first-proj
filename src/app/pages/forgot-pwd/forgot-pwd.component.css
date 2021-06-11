@@ -1,0 +1,19 @@
+::ng-deep .ant-card-head-title {
+    font-weight: bold;
+}
+
+nz-card {
+    font-weight: bold;
+}
+
+.btn-login {
+    float: right;
+    font-weight: bold;
+    color: royalblue;
+    background: black;
+}
+
+.btn-login:hover {
+    border: 2px solid violet;
+    color: violet;
+}

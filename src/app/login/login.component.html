@@ -1,17 +1,17 @@
 <div>
-    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+    <form nz-form [formGroup]="validateForm" class="login-form" #f="ngForm" (ngSubmit)="submitInfo(f)" novalidate>
         <img nz-image width="300px" height="150px" nzSrc="../../assets/images/ayaya.gif" alt="login.gif" />
         <nz-form-item>
             <nz-form-control nzErrorTip="Please input your username!">
                 <nz-input-group nzPrefixIcon="user">
-                    <input type="text" nz-input formControlName="userName" placeholder="Username" />
+                    <input type="text" nz-input formControlName="username" placeholder="Username" [(ngModel)]="loginModel.username" />
                 </nz-input-group>
             </nz-form-control>
         </nz-form-item>
         <nz-form-item>
             <nz-form-control nzErrorTip="Please input your Password!">
                 <nz-input-group nzPrefixIcon="lock">
-                    <input type="password" nz-input formControlName="password" placeholder="Password" />
+                    <input type="password" nz-input formControlName="password" placeholder="Password" [(ngModel)]="loginModel.password" />
                 </nz-input-group>
             </nz-form-control>
         </nz-form-item>
@@ -22,10 +22,9 @@
                 </label>
             </div>
             <div nz-col [nzSpan]="12">
-                <a class="login-form-forgot">Forgot password</a>
+                <a routerLink="/forgot-password" class="login-form-forgot">Forgot Password</a>
             </div>
         </div>
-        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
-        Or <a> register now! </a>
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" [disabled]="f.form.invalid">Log in</button>
     </form>
 </div>

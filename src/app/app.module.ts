@@ -14,7 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { FormComponent } from './pages/form/form.component';
 import { LoginComponent } from './login/login.component';
 import { DemoNgZorroAntdModule } from './ng-zoro-antd.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -26,13 +25,13 @@ import { RegisterFailComponent } from './message/register-fail/register-fail.com
 import { WebAnalyticsComponent } from './pages/web-analytics/web-analytics.component';
 import { ActivityLogsComponent } from './pages/activity-logs/activity-logs.component';
 import { AccProfileComponent } from './pages/acc-profile/acc-profile.component';
+import { ForgotPwdComponent } from './pages/forgot-pwd/forgot-pwd.component';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
     LoginComponent,
     WelcomeComponent,
     DashboardComponent,
@@ -43,7 +42,8 @@ registerLocaleData(en);
     RegisterFailComponent,
     WebAnalyticsComponent,
     ActivityLogsComponent,
-    AccProfileComponent
+    AccProfileComponent,
+    ForgotPwdComponent
   ],
   imports: [
     BrowserModule,
