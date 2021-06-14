@@ -11,17 +11,95 @@
     </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let AData of listofFetchAdminData">  
-        <td>{{AData.admin_id}}</td>
-        <td>{{AData.admin_username}}</td>
-        <td>{{AData.admin_email}}</td>
-        <td>{{AData.admin_firstname}} </td>
-        <td>{{AData.admin_lastname}}</td>
-        <td>{{AData.admin_timecreated}}</td>
-        <td class="action-btn">
-          <a>Update</a><br>
-          <a>Delete</a>
-        </td>
-      </tr>
+    <tr *ngFor="let AData of listofFetchAdminData">
+      <td>{{AData.admin_id}}</td>
+      <td>{{AData.admin_username}}</td>
+      <td>{{AData.admin_email}}</td>
+      <td>{{AData.admin_firstname}} </td>
+      <td>{{AData.admin_lastname}}</td>
+      <td>{{AData.admin_timecreated}}</td>
+      <td class="action-btn">
+        <a (click)="openUpdateForm()">Update</a><br>
+        <a (click)="openDeleteForm()">Delete</a>
+      </td>
+    </tr>
   </tbody>
 </nz-table>
+
+<!--Update Form in Drawer-->
+<nz-drawer [nzVisible]="updateFormVisible" [nzWidth]="500" [nzClosable]="false" (nzOnClose)="close()">
+  <ng-container *nzDrawerContent>
+    <p class="title" style="margin-bottom: 24px;"><b>Update Account Form</b></p>
+      <form nz-form [formGroup]="updateForm" (ngSubmit)="submitUpdateForm(uf)" #uf="ngForm" novalidate>
+        <!--Old Email-->
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="old_email">Old E-mail</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input a valid email!">
+            <input nz-input formControlName="old_email" id="old_email" [(ngModel)]="updateModel.old_email" nzValue="" />
+          </nz-form-control>
+        </nz-form-item>
+        <!--Update Email-->
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="up_email">New E-mail</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input a valid email!">
+            <input nz-input formControlName="up_email" id="up_email" [(ngModel)]="updateModel.up_email" nzValue="" />
+          </nz-form-control>
+        </nz-form-item>
+        <!--First Name-->
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="firstName" nzRequired
+            nzTooltipTitle="What is admin's first name or surname?">
+            <span>First Name</span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input admin's first name!">
+            <input nz-input id="firstName" formControlName="up_firstName" [(ngModel)]="updateModel.firstName" nzValue="" />
+          </nz-form-control>
+        </nz-form-item>
+        <!--Last Name-->
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="lastName" nzRequired nzTooltipTitle="What is admin's last name?">
+            <span>Last Name</span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input admin's last name!">
+            <input nz-input id="lastName" formControlName="up_lastName" [(ngModel)]="updateModel.lastName" nzValue="" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row>
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary" [disabled]="uf.form.invalid">Update</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+  </ng-container>
+</nz-drawer>
+
+<!--Delete Form in Drawer-->
+<nz-drawer [nzVisible]="deleteFormVisible" [nzWidth]="500" [nzClosable]="false"(nzOnClose)="close()">
+  <ng-container #nzDrawerContent>
+    <p class="title" style="margin-bottom: 24px;"><b>Delete Account Form</b></p>
+    <form nz-form [formGroup]="deleteForm" (ngSubmit)="submitDeleteForm(df)" #df="ngForm" novalidate>
+      <!--Email-->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input a valid email!">
+          <input nz-input formControlName="del_email" id="del_email" [(ngModel)]="deleteModel.email" nzValue="" />
+        </nz-form-control>
+      </nz-form-item>
+      <!--Username-->
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="username" nzRequired
+            nzTooltipTitle="Input the Username which you would like to delete">
+            <span>Username</span>
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input the username you would like to delete!">
+            <input nz-input id="username" formControlName="del_username" [(ngModel)]="deleteModel.username" nzValue="" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row>
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary" [disabled]="df.form.invalid">Delete</button>
+      </nz-form-control>
+    </nz-form-item>
+    </form>
+  </ng-container>
+</nz-drawer>
